@@ -25,7 +25,7 @@ def generate_launch_description():
     )
 
     world_arg = DeclareLaunchArgument(
-        'world', default_value='world.sdf',
+        'world', default_value='home.sdf',
         description='Name of the Gazebo world file to load'
     )
 
@@ -109,11 +109,11 @@ def generate_launch_description():
             #"/camera/image@sensor_msgs/msg/Image@gz.msgs.Image",
             #"/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
             # "/imu@sensor_msgs/msg/Imu@gz.msgs.IMU",
-            "/navsat@sensor_msgs/msg/NavSatFix@gz.msgs.NavSat",
+            #"/navsat@sensor_msgs/msg/NavSatFix@gz.msgs.NavSat",
             #"/scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan",
-            #"/scan/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
-            #"/camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image",
-            #"/camera/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
+            "/scan/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
+            "/camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image",
+            "/camera/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
         ],
         output="screen",
         parameters=[
