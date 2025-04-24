@@ -87,5 +87,25 @@ def generate_launch_description():
 ```
 Replace gazebo_models_path with your local directory.
 
+**4. NO GPS**
+To enable GPS in Gazebo, add the following to your SDF file:
+```xml
+<plugin
+  filename="gz-sim-navsat-system"
+  name="gz::sim::systems::NavSat">
+</plugin>
+<!-- Set the coordinates for the world origin -->
+<spherical_coordinates>
+  <surface_model>EARTH_WGS84</surface_model>
+  <world_frame_orientation>ENU</world_frame_orientation>
+  <latitude_deg>47.478950</latitude_deg>
+  <longitude_deg>19.057785</longitude_deg>
+  <elevation>0</elevation>
+  <heading_deg>0</heading_deg>
+</spherical_coordinates>
+```
+Note: Gazebo is currently unable to load this plugin, so GPS functionality is not working.
+Once this issue is resolved, a troubleshooting guide will be added here.
+
 ### 🏎️ f1tenth_sim Package
 The f1tenth_sim package provides an F1Tenth car simulation in Gazebo Harmonic.
