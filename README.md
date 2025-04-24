@@ -6,7 +6,6 @@ This repository contains two ROS 2 Humble packages for testing simple rovers in 
 - 🏎️ f1tenth_sim: run an F1Tenth car simulation
 
 ## 📦 Installation
----
 ```bash
 git clone https://github.com/kimhoyun-robotair/Gazebo_Harmonic_Rover.git
 cd Gazebo_Harmonic_Rover
