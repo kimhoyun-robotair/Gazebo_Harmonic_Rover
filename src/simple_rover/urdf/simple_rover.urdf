@@ -12,9 +12,9 @@
     <!--Add macros for camear-->
     <!--xacro:include filename="$(find simple_rover)/urdf/camera.xacro"/-->
     <!--Add macros for 2D LiDAR-->
-    <!--xacro:include filename="$(find simple_rover)/urdf/2Dlidar.xacro"/-->
+    <xacro:include filename="$(find simple_rover)/urdf/2Dlidar.xacro"/>
     <!--Add macros for 3D LiDAR-->
-    <xacro:include filename="$(find simple_rover)/urdf/3Dlidar.xacro"/>
+    <!--xacro:include filename="$(find simple_rover)/urdf/3Dlidar.xacro"/-->
     <!--Add macros for RGB-D camera-->
     <xacro:include filename="$(find simple_rover)/urdf/RGB_D.xacro"/>
     <!--Add macros for IMU-->
