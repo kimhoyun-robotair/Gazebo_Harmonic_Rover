@@ -86,6 +86,6 @@ def generate_launch_description():
     os.environ["GZ_SIM_RESOURCE_PATH"] += os.pathsep + gazebo_models_path
 ```
 Replace gazebo_models_path with your local directory.
----
+
 ### 🏎️ f1tenth_sim Package
 The f1tenth_sim package provides an F1Tenth car simulation in Gazebo Harmonic.
