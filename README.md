@@ -13,7 +13,7 @@ colcon build --symlink-install
 source install/local_setup.bash    # or source install/setup.bash
 ```
 ### 🦾 simple_rover Package
-- 🚀 Usage
+**1. 🚀 Usage**
 ```bash
 ros2 launch simple_rover spawn_robot.launch.py
 ```
@@ -40,7 +40,7 @@ In urdf/simple_rover.urdf, various sensor plugins are included. To enable the on
     <!-- xacro:include filename="$(find simple_rover)/urdf/gps.xacro" /-->
 ```
 
-- 🔄 ROS–Gazebo Topic Bridging
+**2. 🔄 ROS–Gazebo Topic Bridging**
 In launch/spawn_robot.launch.py, the ros_gz_bridge node bridges Gazebo topics to ROS 2. Comment or uncomment the lines for the topics you need:
 
 ```python
@@ -68,7 +68,7 @@ gz_bridge_node = Node(
 ```
 Uncomment a line to activate that bridge.
 
-- 🌍 World Configuration
+**3. 🌍 World Configuration**
 Edit launch/world.launch.py to choose your Gazebo world file and add your own models path:
 
 ```python
@@ -86,6 +86,6 @@ def generate_launch_description():
     os.environ["GZ_SIM_RESOURCE_PATH"] += os.pathsep + gazebo_models_path
 ```
 Replace gazebo_models_path with your local directory.
-
+---
 ### 🏎️ f1tenth_sim Package
 The f1tenth_sim package provides an F1Tenth car simulation in Gazebo Harmonic.
