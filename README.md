@@ -41,6 +41,7 @@ In urdf/simple_rover.urdf, various sensor plugins are included. To enable the on
 ```
 
 **2. 🔄 ROS–Gazebo Topic Bridging**
+
 In launch/spawn_robot.launch.py, the ros_gz_bridge node bridges Gazebo topics to ROS 2. Comment or uncomment the lines for the topics you need:
 
 ```python
@@ -69,6 +70,7 @@ gz_bridge_node = Node(
 Uncomment a line to activate that bridge.
 
 **3. 🌍 World Configuration**
+
 Edit launch/world.launch.py to choose your Gazebo world file and add your own models path:
 
 ```python
@@ -88,6 +90,7 @@ def generate_launch_description():
 Replace gazebo_models_path with your local directory.
 
 **4. NO GPS**
+
 To enable GPS in Gazebo, add the following to your SDF file:
 ```xml
 <plugin
