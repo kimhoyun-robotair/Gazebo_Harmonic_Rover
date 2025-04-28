@@ -112,3 +112,26 @@ Once this issue is resolved, a troubleshooting guide will be added here.
 
 ### 🏎️ f1tenth_sim Package
 The f1tenth_sim package provides an F1Tenth car simulation in Gazebo Harmonic.
+
+# 📜 Credits & License Notice
+
+This project was made possible thanks to the open‑source work published by the MOGI‑ROS organization. We would like to express our deepest gratitude to all of its authors and maintainers for generously sharing their code and documentation.
+
+Portions of this repository are derived from MOGI‑ROS course materials and retain their original license headers. Unless otherwise noted, all new code in Gazebo_Harmonic_Rover is released under the Apache License 2.0, in full accordance with the upstream terms.
+
+Copyright © 2025 MOGI‑ROS and contributors
+Copyright © 2025 Gazebo_Harmonic_Rover contributors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+For full details, please refer to the individual source files and the upstream MOGI‑ROS repositories.
