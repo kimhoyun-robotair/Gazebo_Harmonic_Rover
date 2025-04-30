@@ -5,14 +5,17 @@ from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, Command
 from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
 
     pkg_simple_rover = get_package_share_directory('simple_rover')
+    pkg_share = FindPackageShare(package='simple_rover').find('simple_rover')
 
     gazebo_models_path, ignore_last_dir = os.path.split(pkg_simple_rover)
     os.environ["GZ_SIM_RESOURCE_PATH"] += os.pathsep + gazebo_models_path
+    joy_teleop_config_file = os.path.join(pkg_share, 'config/MXswitch.config.yaml')
 
     rviz_launch_arg = DeclareLaunchArgument(
         'rviz', default_value='true',
@@ -162,6 +165,24 @@ def generate_launch_description():
         ]
     )
 
+    joy = Node(
+        package='joy',
+        executable='joy_node',
+        name='joy_node',
+        parameters=[{
+            'device_id': 0,          # ls /dev/input/js* to find the device id
+            'deadzone': 0.3,         # Deadzone for the joystick axes
+            'autorepeat_rate': 20.0, # Autorepeat rate for the joystick buttons
+        }]
+    )
+
+    joy_teleop = Node(
+        package='teleop_twist_joy',
+        executable='teleop_node',
+        name='teleop_twist_joy_node',
+        parameters=[joy_teleop_config_file]
+    )
+
     launchDescriptionObject = LaunchDescription()
 
     launchDescriptionObject.add_action(rviz_launch_arg)
@@ -179,5 +200,7 @@ def generate_launch_description():
     launchDescriptionObject.add_action(gz_image_bridge_node)
     launchDescriptionObject.add_action(relay_camera_info_node)
     launchDescriptionObject.add_action(robot_state_publisher_node)
+    launchDescriptionObject.add_action(joy)
+    launchDescriptionObject.add_action(joy_teleop)
 
     return launchDescriptionObject
