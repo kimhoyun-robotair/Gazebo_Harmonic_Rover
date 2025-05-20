@@ -1,0 +1,230 @@
+<sdf version='1.10'>
+  <world name='empty'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <plugin name='gz::sim::systems::Sensors' filename='gz-sim-sensors-system'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin name='gz::sim::systems::Imu' filename='gz-sim-imu-system'/>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>50</mu>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <include>
+      <uri>file:///home/kimhoyun/.gz/fuel/fuel.gazebosim.org/openrobotics/models/warehouse/5</uri>
+      <name>warehouse</name>
+      <pose>2.1237794472033329 -1.5969571672278011 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01</name>
+      <pose>13.75206748164835 19.757343080361839 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0</name>
+      <pose>10.711814879765313 19.717104786802892 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_1</name>
+      <pose>7.5764588864633904 19.466703466709028 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_2</name>
+      <pose>5.0224816320006571 20.214955215836291 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_3</name>
+      <pose>1.5361770628732323 19.636536195001675 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_4</name>
+      <pose>2.7565465967613232 9.8496939556238026 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_5</name>
+      <pose>7.1913142955019396 8.8922970422907159 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_6</name>
+      <pose>-2.7489472826287678 16.358617686797757 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_7</name>
+      <pose>-3.4831095270707593 11.415471053761493 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_8</name>
+      <pose>-6.8565838330464493 9.6237797034134367 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_9</name>
+      <pose>-2.7788145677313612 2.0861921089345561 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_10</name>
+      <pose>-8.9106895147812111 18.14300831521097 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_11</name>
+      <pose>4.9338700161922162 1.6048956274361021 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_12</name>
+      <pose>4.734088278029569 -7.0495018334159418 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_13</name>
+      <pose>-0.11895088992742586 -5.7419117950963621 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_14</name>
+      <pose>-7.509986658041865 -7.0558641894631613 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_15</name>
+      <pose>-8.2807993531781605 -11.621041273180477 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_16</name>
+      <pose>-3.5392503966006617 -16.686672061688668 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_17</name>
+      <pose>-7.7815585555369111 -20.637268889193184 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_18</name>
+      <pose>-6.3463344602465082 -23.713641108422163 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_19</name>
+      <pose>-3.736717242188933 -22.508198175314664 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_20</name>
+      <pose>8.3217143038721844 -24.210627499570954 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_21</name>
+      <pose>5.8010010361026936 -17.737674602468982 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_22</name>
+      <pose>10.664030569338475 -15.478522132374312 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_23</name>
+      <pose>11.912177791062298 -5.3206112279906499 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>file:///home/kimhoyun/gazebo_models/aws_robomaker_warehouse_ClutteringC_01</uri>
+      <name>aws_robomaker_warehouse_ClutteringC_01_0_24</name>
+      <pose>10.568292271428454 4.8056391928499398 0 0 0 0</pose>
+    </include>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>

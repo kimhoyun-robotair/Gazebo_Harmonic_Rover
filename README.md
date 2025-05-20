@@ -110,6 +110,38 @@ To enable GPS in Gazebo, add the following to your SDF file:
 Note: Gazebo is currently unable to load this plugin, so GPS functionality is not working.
 Once this issue is resolved, a troubleshooting guide will be added here.
 
+**5. Cartographer, AMCL, and Nav2 🚀**
+
+The simple_rover package supports both Cartographer and Nav2 (assuming the required metapackages are already installed).
+
+🗺️ Launching Cartographer
+```bash
+source install/setup.bash
+ros2 launch simple_rover cartographer.launch.py
+```
+
+🧭 Launching AMCL and Nav2
+```bash
+# Terminal 1
+source install/setup.bash
+ros2 launch simple_rover amcl.launch.py
+
+# Terminal 2
+source install/setup.bash
+ros2 launch simple_rover navigation.launch.py
+```
+
+🤖 Running Autonomous Navigation with Nav2
+```bash
+source install/setup.bash
+ros2 run nav2_programming follow_waypoints
+# ros2 run nav2_programming navigate_through_poses
+# ros2 run nav2_programming navigate_to_pose
+```
+
+Tip:
+You can use follow_waypoints, navigate_through_poses, or navigate_to_pose depending on your navigation needs.
+
 ### 🏎️ f1tenth_sim Package
 The f1tenth_sim package provides an F1Tenth car simulation in Gazebo Harmonic.
 

@@ -11,11 +11,11 @@ find_package(rclcpp REQUIRED)
 
 install(DIRECTORY
   launch
-  worlds
   urdf
   config
   rviz
   worlds
+  map
   DESTINATION share/${PROJECT_NAME}
 )
 
@@ -30,5 +30,6 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
 
 ament_package()
