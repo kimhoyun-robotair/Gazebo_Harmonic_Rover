@@ -5,6 +5,12 @@ This repository contains two ROS 2 Humble packages for testing simple rovers in 
 
 - 🏎️ f1tenth_sim: run an F1Tenth car simulation
 
+**Refer to this tutorial to first download the files from the offline model repository, then either export the model path to ```GZ_SIM_RESOURCE_PATH``` or add the export command to your ```.bashrc```.**
+
+- https://github.com/MOGI-ROS/Week-3-4-Gazebo-basics?tab=readme-ov-file
+
+**If the model or world file still cannot be opened and shows errors, please open the SDF file and update any hardcoded paths to models, meshes, or other resources so that they point to the correct locations on your system.**
+
 ## 📦 Installation
 ```bash
 git clone https://github.com/kimhoyun-robotair/Gazebo_Harmonic_Rover.git
